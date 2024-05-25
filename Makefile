@@ -1,5 +1,5 @@
 .PHONY: all
-all: format 
+all: format install_tools build
 #static_analysis
 
 .PHONY: format
