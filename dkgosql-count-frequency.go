@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 type Data struct {
 	Key   string
@@ -45,6 +48,8 @@ func updateCount(dataUnique *[]Data, searchStr string, cnt int) {
 
 // string of "dhananjay"
 func main() {
-	var name = "Dhananjay"
+	argsWithProg := os.Args
+	fmt.Println("argsWithProg:", argsWithProg)
+	name := argsWithProg[1]
 	CountFreq(name)
 }

@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'cd ../.. && make build'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing completed!'
+            } 
+        }
+        stage('Run') {
+            steps {
+                sh './bin/service-zone-utils/golang-examples'
+            }
+        }
+        stage('Completed') {
+            steps {
+               echo 'Task completed!'
+            }
+        }
+    }
+}
