@@ -1,8 +1,8 @@
 package main
 
 import (
-	"flag"
 	"fmt"
+	"os"
 )
 
 type Data struct {
@@ -48,7 +48,7 @@ func updateCount(dataUnique *[]Data, searchStr string, cnt int) {
 
 // string of "dhananjay"
 func main() {
-	param1 := flag.String("param1", "", "First parameter")
-	name := *param1
+	name := os.Args[1]
+	fmt.Println("name:", name)
 	CountFreq(name)
 }
