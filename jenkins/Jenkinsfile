@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh './bin/service-zone-utils/golang-examples testingwordsforuniuq'
+                sh './bin/service-zone-utils/golang-examples -param1 ${PARAM1}'
             }
         }
         stage('Completed') {
