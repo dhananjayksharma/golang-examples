@@ -34,7 +34,5 @@ build: build_service_zone_utils_cbr_as_provider
 
 .PHONY: build_service_zone_utils_cbr_as_provider
 build_service_zone_utils_cbr_as_provider:
-	@mkdir -p ./cbr-as-provider/bin/cbr-as-provider 
-	@cd cbr-as-provider
-	@go build -o ./cbr-as-provider/bin/cbr-as-provider ./...
-	@ls -ltr
+	@mkdir -p ./cbr-as-provider/bin/cbr-as-provider  
+	@go build -o ./cbr-as-provider/bin/cbr-as-provider ./... 
