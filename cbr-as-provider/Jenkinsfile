@@ -20,8 +20,8 @@ pipeline {
             steps {
                 echo 'Step Run'
                 // sh 'cd cbr-as-provider && ls -ltr'
-                sh 'ls -ltr cbr-as-provider'
-                // sh './cbr-as-provider/bin/cbr-as-provider/cbr-as-provider ${PARAM1}'
+                sh 'ls -ltr cbr-as-provider' 
+                sh 'go run ./cbr-as-provider/classic-provider.go ${PARAM1}'
                 sh 'pwd'
 
             }
