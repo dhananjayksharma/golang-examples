@@ -7,6 +7,7 @@ pipeline {
                 sh 'cd cbr-as-provider && ls -ltr'
                 echo 'Step Run'
                 sh 'make build'
+                sh 'ls -ltr ./cbr-as-provider/.'
                 sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}'
                 sh 'ls -ltr'
             }
