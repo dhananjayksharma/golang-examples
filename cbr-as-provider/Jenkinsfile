@@ -19,7 +19,8 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Step Run'
-                sh 'cd cbr-as-provider && ls -ltr'
+                // sh 'cd cbr-as-provider && ls -ltr'
+                sh 'ls -ltr'
                 sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}'
             }
         }
