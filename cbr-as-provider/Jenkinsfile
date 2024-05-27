@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd cbr-as-provider'
+                sh 'pwd && ls -ltr'
                 sh 'make build'
             }
         }
