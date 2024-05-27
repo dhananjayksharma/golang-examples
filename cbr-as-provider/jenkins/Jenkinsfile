@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make build'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing completed!'
+            } 
+        }
+        stage('Run') {
+            steps {
+                sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}'
+            }
+        }
+        stage('Completed') {
+            steps {
+               echo 'Task completed!'
+            }
+        }
+    }
+}
