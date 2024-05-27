@@ -4,7 +4,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'pwd && ls -ltr'
+                sh 'cd cbr-as-provider && ls -ltr'
+                echo 'Step Build 1'
                 sh 'make build'
+                echo 'Step Build 2'
+                sh 'ls -ltr'
             }
         }
         stage('Test') {
@@ -13,7 +17,9 @@ pipeline {
             } 
         }
         stage('Run') {
-            steps { 
+            steps {
+                echo 'Step Run'
+                sh 'ls -ltr'
                 sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}'
             }
         }
