@@ -12,8 +12,7 @@ pipeline {
             } 
         }
         stage('Run') {
-            steps {
-                sh 'cd cbr-as-provider'
+            steps { 
                 sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}'
             }
         }
