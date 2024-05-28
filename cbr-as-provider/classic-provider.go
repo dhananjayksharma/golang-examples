@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"golang-examples/cbr-as-provider/utils"
 	"os"
 )
 
@@ -49,6 +50,8 @@ func updateCount(dataUnique *[]Data, searchStr string, cnt int) {
 // string of "main"
 func main() {
 	name := os.Args[1]
+	currTime := utils.GetCurrentTime()
+	fmt.Println("Running now:", currTime)
 	fmt.Println("Running as classic provider params:", name)
 	CountFreq(name)
 }
