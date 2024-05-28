@@ -40,4 +40,4 @@ build_service_zone_utils:
 .PHONY: build_service_zone_utils_cbr_as_provider
 build_service_zone_utils_cbr_as_provider:
 	@mkdir -p ./bin/cbr-as-provider 
-	@go build -o ./bin/cbr-as-provider/cbr-as-provider ./cbr-as-provider/..
+	@go build -o ./bin/cbr-as-provider/cbr-as-provider ./cbr-as-provider/classic-provider.go

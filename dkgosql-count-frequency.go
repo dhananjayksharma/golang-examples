@@ -49,6 +49,6 @@ func updateCount(dataUnique *[]Data, searchStr string, cnt int) {
 // string of "main"
 func main() {
 	name := os.Args[1]
-	fmt.Println("name:", name)
+	fmt.Println("root:", name)
 	CountFreq(name)
 }
