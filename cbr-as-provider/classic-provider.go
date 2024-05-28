@@ -51,7 +51,9 @@ func updateCount(dataUnique *[]Data, searchStr string, cnt int) {
 func main() {
 	name := os.Args[1]
 	currTime := utils.GetCurrentTime()
+	cbrServiceZoneApiKey := os.Getenv("IBM_CLOUD_CBR_SERVICE_ZONE_API_KEY")
 	fmt.Println("Running now:", currTime)
+	fmt.Println("IBM_CLOUD_CBR_SERVICE_ZONE_API_KEY:", cbrServiceZoneApiKey[5:])
 	fmt.Println("Running as classic provider params:", name)
 	CountFreq(name)
 }
