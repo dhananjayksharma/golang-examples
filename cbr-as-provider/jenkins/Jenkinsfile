@@ -3,12 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'pwd && ls -ltr'
-                // sh 'cd cbr-as-provider && ls -ltr'
-                echo 'Step Run'
+                echo 'Step Build'
                 sh 'make build_service_zone_utils_cbr_as_provider'
-                sh 'ls -ltr ./cbr-as-provider/.'
-                sh 'ls -ltr'
             }
         }
         stage('Test') {
@@ -19,10 +15,7 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Step Run'
-                sh 'ls -ltr'
-                sh 'ls -ltr cbr-as-provider/.' 
-                sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}'
-                sh 'pwd'
+                sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}' 
             }
         }
         stage('Completed') {
