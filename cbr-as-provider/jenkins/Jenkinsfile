@@ -1,11 +1,12 @@
 pipeline {
     agent any
+    environment {
+        // Inject the secret into an environment variable
+        IBM_CLOUD_CBR_SERVICE_ZONE_API_KEY = credentials('cbr_operator_service_zone_api_key_jj')
+    }
     stages {
         stage('Build') {
-            steps {
-                withCredentials([string(credentialsId: 'cbr_operator_service_zone_api_key_jj', variable: 'cbrServiceZoneApiKey')]) {
-                    env.IBM_CLOUD_CBR_SERVICE_ZONE_API_KEY = cbrServiceZoneApiKey
-                }
+            steps { 
                 echo 'Step Build'
                 sh 'make build_service_zone_utils_cbr_as_provider'
             }
