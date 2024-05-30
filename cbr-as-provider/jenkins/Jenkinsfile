@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    tools {
+        go 'go-1.22.2'
+    }
+
+    environment {
+        // Inject the secret into an environment variable
+        IBM_CLOUD_CBR_SERVICE_ZONE_API_KEY = credentials('cbr_operator_service_zone_api_key_jj')
+        GO111MODULE = 'on'
+    }
+    stages {
+        stage('Build') {
+            steps { 
+                echo 'Step Build'
+                sh 'make build_service_zone_utils_cbr_as_provider'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing completed!'
+            } 
+        }
+        stage('Run') {
+            steps {
+                echo 'Step Run'
+                sh './bin/cbr-as-provider/cbr-as-provider ${PARAM1}' 
+            }
+        }
+        stage('Completed') {
+            steps {
+               echo 'Task completed!'
+            }
+        }
+    }
+}

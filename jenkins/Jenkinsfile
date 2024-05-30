@@ -13,7 +13,9 @@ pipeline {
         }
         stage('Run') {
             steps {
+                sh 'pwd'
                 sh './bin/service-zone-utils/golang-examples ${PARAM1}'
+                sh 'ls -ltr'
             }
         }
         stage('Completed') {

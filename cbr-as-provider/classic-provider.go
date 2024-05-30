@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"golang-examples/cbr-as-provider/utils"
 	"os"
 )
 
@@ -49,6 +50,11 @@ func updateCount(dataUnique *[]Data, searchStr string, cnt int) {
 // string of "main"
 func main() {
 	name := os.Args[1]
-	fmt.Println("root:", name)
+	currTime := utils.GetCurrentTime()
+	cbrServiceZoneApiKey := os.Getenv("IBM_CLOUD_CBR_SERVICE_ZONE_API_KEY")
+	fmt.Println("Running now:", currTime)
+	fmt.Println("Running now ver 2:", currTime)
+	fmt.Println("IBM_CLOUD_CBR_SERVICE_ZONE_API_KEY:", cbrServiceZoneApiKey[5:])
+	fmt.Println("Running as classic provider params:", name)
 	CountFreq(name)
 }
